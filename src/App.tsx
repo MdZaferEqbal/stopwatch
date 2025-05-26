@@ -1,25 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import StopWatch from "./components/StopWatch";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="App container">
+        <header className="app-header">
+          <h1>Stopwatch</h1>
+        </header>
+
+        <main className="app-main">
+          <div className="stopwatch-container">
+            <StopWatch />
+          </div>
+        </main>
+      </div>
+      <footer className="app-footer">
+        <p>© 2024 Zafer Precision Timer Inc.</p>
+      </footer>
+    </>
   );
 }
 

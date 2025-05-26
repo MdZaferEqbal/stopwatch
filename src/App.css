@@ -1,38 +1,160 @@
-.App {
+*,
+::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: #657a86;
+  --secondary-red-tomato: #ec4c5d;
+  --secondary-green-olive: #4caf50;
+  --secondary-light: #fefffe;
+  --secondary-light-grey: #d3d2d5;
+  --secondary-dark-grey: #3f4346;
+}
+
+body {
+  background-color: var(--secondary-light);
+}
+
+/* Utility Classe */
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.app-header {
+  color: var(--secondary-red-tomato);
+  font-family: "Jersey 15", sans-serif;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  letter-spacing: 0.25rem;
+}
+
+.app-main {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.stopwatch-container {
+  margin-top: 1rem;
+}
+
+.stopwatch-timer {
+  font-size: 1.5rem;
+  color: var(--secondary-dark-grey);
+  font-weight: bolder;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.stopwatch-container {
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.stopwatch-controller {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 25px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.stopwatch-controller button {
+  padding: 0.75em;
+  font-weight: bolder;
+  border-radius: 5px;
+  cursor: pointer;
+  min-width: 25vw;
+  color: var(--secondary-light);
+  transition: all 250ms ease-in-out;
+}
+
+.stopwatch-reset-btn {
+  border: 2px solid var(--secondary-red-tomato);
+  background-color: var(--secondary-red-tomato);
+}
+.stopwatch-reset-btn:hover {
+  background-color: transparent;
+  color: var(--secondary-red-tomato);
+}
+
+.stopwatch-start-btn {
+  border: 1px solid var(--secondary-green-olive);
+  background-color: var(--secondary-green-olive);
+  color: var(--secondary-red-tomato);
+}
+.stopwatch-start-btn:hover {
+  background-color: transparent;
+  color: var(--secondary-green-olive);
+}
+
+.stopwatch-stop-btn {
+  border: 2px solid var(--secondary-red-tomato);
+  background-color: var(--secondary-red-tomato);
+}
+.stopwatch-stop-btn:hover {
+  background-color: transparent;
+  color: var(--secondary-red-tomato);
+}
+
+.stopwatch-lap-btn {
+  border: 1px solid var(--secondary-green-olive);
+  background-color: var(--secondary-green-olive);
+  color: var(--secondary-red-tomato);
+}
+.stopwatch-lap-btn:hover {
+  background-color: transparent;
+  color: var(--secondary-green-olive);
+}
+
+.stopwatch-lapList {
+  margin: 1rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-height: 60vh;
+  overflow: auto;
+  gap: 0.5rem;
+}
+
+.stopwatch-lapList h3 {
+  color: var(--secondary-green-olive);
+  font-family: "Jersey 15", sans-serif;
+  align-items: center;
+  font-size: 1.25rem;
+  letter-spacing: 0.125rem;
+  margin-bottom: 0.75rem;
+}
+
+.stopwatch-lapItem {
+  display: flex;
+  gap: 10px;
+  color: var(--secondary-dark-grey);
+  font-weight: bold;
+  position: relative;
+}
+.stopwatch-lapItem::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  bottom: 0;
+  background-color: var(--secondary-dark-grey);
+}
+
+.app-footer {
+  height: 60px;
+  width: 100%;
+  background-color: var(--secondary-red-tomato);
+  color: var(--secondary-light);
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  align-items: center;
+  font-weight: bolder;
 }
