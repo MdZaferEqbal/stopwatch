@@ -16,7 +16,7 @@ function App() {
         </main>
       </div>
       <footer className="app-footer">
-        <p>© 2024 Zafer Precision Timer Inc.</p>
+        <p>© 2025 Zafer Precision Timer Inc.</p>
       </footer>
     </>
   );
